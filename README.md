@@ -39,7 +39,6 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- PostCSS
 - Mobile-first workflow
 - Vanilla JavaScript
 
