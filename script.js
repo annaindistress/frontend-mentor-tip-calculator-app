@@ -34,12 +34,16 @@ const displayResults = (bill = 0, people = 0, tip = 0) => {
   let resultTips = 0;
   let resultTotal = 0;
 
-  if (bill !== 0 && people !== 0) {
-    if (tip !== 0) {
-      resultTips = ((bill / 100) * tip) / people;
+  const billNum = parseInt(bill);
+  const peopleNum = parseInt(people);
+  const tipNum = parseInt(tip);
+
+  if (billNum !== 0 && peopleNum !== 0) {
+    if (tipNum !== 0) {
+      resultTips = ((billNum / 100) * tipNum) / peopleNum;
     }
 
-    resultTotal = bill / people + resultTips;
+    resultTotal = billNum / peopleNum + resultTips;
   }
 
   resultTipElement.textContent = `$${resultTips.toFixed(2)}`;
@@ -91,7 +95,7 @@ const inputHandler = () => {
     if (tip !== '') tip = parseInt(tip);
     if (selectedTip !== null) tip = parseInt(selectedTip.value);
 
-    displayResults(parseInt(bill), parseInt(people), tip);
+    displayResults(bill, people, tip);
   }
 };
 
@@ -138,11 +142,7 @@ tipInput.addEventListener('input', () => {
   if (tipInput.value !== '' && selectedTip !== null)
     selectedTip.checked = false;
   if (billInput.value !== '' && peopleInput.value !== '')
-    displayResults(
-      parseInt(billInput.value),
-      parseInt(peopleInput.value),
-      parseInt(tipInput.value)
-    );
+    displayResults(billInput.value, peopleInput.value, tipInput.value);
   resetHandler();
 });
 
@@ -151,11 +151,7 @@ tipList.addEventListener('change', (evt) => {
   if (target.name === 'tip-amount') {
     if (tipInput.value !== '') tipInput.value = '';
     if (billInput.value !== '' && peopleInput.value !== '')
-      displayResults(
-        parseInt(billInput.value),
-        parseInt(peopleInput.value),
-        parseInt(target.value)
-      );
+      displayResults(billInput.value, peopleInput.value, target.value);
     resetHandler();
   }
 });
