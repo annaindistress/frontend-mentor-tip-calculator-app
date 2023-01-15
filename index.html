@@ -4,8 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
   <title>Frontend Mentor | Tip calculator app</title>
 </head>
-<body>
+<body class="page">
+  <header class="page__header">
+    <img class="page__logo" src="./images/logo.svg" alt="Splitter logo" width="87" height="53">
+  </header>
+  <main class="page__main">
+    <h1 class="visually-hidden">Frontend Mentor | Tip calculator app</h1>
+    <section class="calculator">
+      <h2 class="visually-hidden">Calculator</h2>
+      <form class="calculator__form" action="#" method="post" novalidate>
+        <fieldset class="calculator__field calculator__field--bill">
+          <label class="calculator__label" for="bill-amount-input">
+            Bill
+          </label>
+          <input
+            class="calculator__input"
+            id="bill-amount-input"
+            name="bill-amount-input"
+            type="number"
+            inputmode="decimal"
+            placeholder="0"
+          >
+        </fieldset>
+        <fieldset class="calculator__field">
+          <legend class="calculator__label">
+            Select Tip %
+          </legend>
+          <ul class="calculator__list">
+            <li>
+              <input class="calculator__radio" id="tip-amount-5" name="tip-amount" type="radio" value="5">
+              <label class="calculator__radio-label" for="tip-amount-5">5%</label>
+            </li>
+            <li>
+              <input class="calculator__radio" id="tip-amount-10" name="tip-amount" type="radio" value="10">
+              <label class="calculator__radio-label" for="tip-amount-10">10%</label>
+            </li>
+            <li>
+              <input class="calculator__radio" id="tip-amount-15" name="tip-amount" type="radio" value="15">
+              <label class="calculator__radio-label" for="tip-amount-15">15%</label>
+            </li>
+            <li>
+              <input class="calculator__radio" id="tip-amount-25" name="tip-amount" type="radio" value="25">
+              <label class="calculator__radio-label" for="tip-amount-25">25%</label>
+            </li>
+            <li>
+              <input class="calculator__radio" id="tip-amount-50" name="tip-amount" type="radio" value="50">
+              <label class="calculator__radio-label" for="tip-amount-50">50%</label>
+            </li>
+            <li>
+              <input
+                class="calculator__input calculator__input--sm"
+                id="tip-amount-custom"
+                name="tip-amount-custom"
+                type="number"
+                inputmode="decimal"
+                placeholder="Custom"
+              >
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="calculator__field calculator__field--people">
+          <label class="calculator__label" for="people-amount-input">
+            Number of People
+          </label>
+          <input
+            class="calculator__input"
+            id="people-amount-input"
+            name="people-amount-input"
+            type="number"
+            inputmode="decimal"
+            placeholder="0"
+          >
+        </fieldset>
+        <div class="calculator__result result">
+          <p class="result__item result__item--tip">
+            <span class="result__title">Tip amount</span>
+            <span class="result__unit">/ person</span>
+            <span class="result__amount">$0.00</span>
+          </p>
+          <p class="result__item result__item--total">
+            <span class="result__title">Total</span>
+            <span class="result__unit">/ person</span>
+            <span class="result__amount">$0.00</span>
+          </p>
+          <button class="result__button" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="./script.js"></script>
 </body>
 </html>
